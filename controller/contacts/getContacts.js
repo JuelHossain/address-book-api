@@ -8,7 +8,7 @@ const sendError = require("../../lib/sendError");
 
 const getContacts = async (req, res) => {
   try {
-    const page = parseInt(req.query.page, 10);
+    const page = req.query.page ? parseInt(req.query.page, 10) : 0;
     const size = parseInt(req.query.size, 10);
 
     const queryReducer = (prev, key) => {
