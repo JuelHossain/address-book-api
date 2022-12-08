@@ -5,7 +5,7 @@
 ##### /auth
 
 1. POST
-   - This api expect user information in the body of the request.
+   - This api expect user information as an object in the body of the request.
    - it will give you a unique jwt token for 1d
    - with the jwt token you will be access the api.
    - you have to send the token in every request header as {authorization:"Bearer Token"}
