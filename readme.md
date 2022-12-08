@@ -1,5 +1,7 @@
 ## Address Book Api.
 
+[check the live sever here](https://address-book-api.vercel.app);
+
 ### Api List
 
 ##### /auth
@@ -52,6 +54,7 @@
 > NB: all endpoints besides auth is protected by jwt. if you want to access the api you must first generate a token by sending request to /auth url method will be post and you should be add user information in the body of the request. in response you will get access token and you have to send this access token like this {authorization:"Bearer Token"} in every request header. otherwise an error will be shown that access:unauthorized;
 
 #### Technologies used
+
 1. Express Js
 2. mongoDB
 3. Json Web Token
