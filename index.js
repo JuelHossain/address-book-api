@@ -4,6 +4,7 @@ const cors = require("cors");
 const client = require("./db/client");
 const authRouter = require("./routers/authRouter");
 const contactRouter = require("./routers/contactRouter");
+const { notFoundHandler, errorHandler } = require("./middlewares/errors");
 
 const app = express();
 const port = process.env.PORT;
@@ -22,6 +23,8 @@ app.use(express.json());
     app.get("/", (req, res) => {
       res.send("address book server is running, Yeh!");
     });
+    app.use("*", notFoundHandler);
+    app.use(errorHandler);
     app.listen(port, () => {
       console.log("server is running on", port);
     });

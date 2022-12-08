@@ -1,13 +1,10 @@
 const sendError = require("../lib/sendError");
 
-const notFoundHandler = (req, res, next) => {
-  next({ code: 404, message: "your url was not found" });
+const notFoundHandler = (req, res) => {
+  sendError(res, "not found", "Your Url Doesn't Exists", 404);
 };
 
 const errorHandler = (err, req, res, next) => {
-  if (err.code === 404) {
-    sendError(res, "not found", "Your url was not found", 404);
-  }
   if (!req.timeout) {
     sendError(res, err);
     next();
