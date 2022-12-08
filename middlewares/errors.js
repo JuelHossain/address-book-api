@@ -6,7 +6,7 @@ const notFoundHandler = (req, res, next) => {
 
 const errorHandler = (err, req, res, next) => {
   if (err.code === 404) {
-    sendError(res, undefined, 404, "Your url was not found");
+    sendError(res, "not found", "Your url was not found", 404);
   }
   if (!req.timeout) {
     sendError(res, err);
