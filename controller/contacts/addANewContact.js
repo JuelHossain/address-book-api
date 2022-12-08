@@ -1,5 +1,5 @@
 // this api adds a contact on the contact collection
-// whatever in the req body will be inserted in the contact collection.
+// this api require an object in the request body containing the data of the contact
 
 const { contactsCollection } = require("../../db/collections");
 const sendError = require("../../lib/sendError");
