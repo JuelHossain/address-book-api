@@ -4,7 +4,7 @@ const sendError = require("../../lib/sendError");
 
 // this api require the contact _id as a url parameter
 // this api will send a single contact which will match the id.
-// with a proper mongodb object id this api will throw an error .
+// without a proper mongodb object id this api will throw an error .
 
 const getSingleContact = async (req, res) => {
   try {
