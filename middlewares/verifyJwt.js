@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 const sendError = require("../lib/sendError");
 
-
 // this middleware function will receive authorization header which will contain the jwt token in request obj and will verify the jwt token and use will be able to access the api if token is good otherwise an error message will be sent based on the token status
 
 // header must contain a property named 'authorization' otherwise 401 error will be sent.
