@@ -12,9 +12,9 @@ const getContacts = async (req, res) => {
     const size = parseInt(req.query.size, 10);
 
     const queryReducer = (prev, key) => {
-      const value = req.query[key];
+      const value = req.query[key]
       if (key === "page" || key === "size") return prev;
-      return { ...prev, [key]: value === "true" ? true : value === "false" ? false : value };
+      return { ...prev, [key]: value === "true" ? true : value === "false" ? false : { $regex: value, $options: "i" } };
     };
 
     const initialQuery = {};
